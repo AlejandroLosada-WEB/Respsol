@@ -1,0 +1,34 @@
+const express = require('express');
+const userCTRL = require('../controllers/user.controller');
+const router = express.Router();
+
+//router.post('/login',userCTRL.controlIP);
+router.post('/login',userCTRL.loginUser);
+//router.post('/verify/:token',userCTRL.controlIP);
+router.post('/verify/:token',userCTRL.verifyToken);
+//router.post('/photoprofile/:token',userCTRL.controlIP);
+router.post('/photoprofile/:token',userCTRL.photoUpload);
+//router.post('/create',userCTRL.controlIP);
+router.post('/create',userCTRL.createUser);
+//router.post('/password',userCTRL.controlIP);
+router.post('/password',userCTRL.changePassword);
+//router.get('/activate/:token',userCTRL.controlIP);
+router.get('/activate/:token',userCTRL.activateUser);
+//router.get('/forgot/:token',userCTRL.controlIP);
+router.get('/forgot/:token',userCTRL.forgotMailUser);
+//router.get('/verify/:token',userCTRL.controlIP);
+router.get('/verify/:token',userCTRL.verifyToken);
+//router.post('/gettoken',userCTRL.controlIP);
+router.post('/gettoken',userCTRL.getToken);
+//router.delete('/delete/:token',userCTRL.controlIP);
+router.delete('/delete/:token',userCTRL.deleteUser);
+//router.put('/update/:token',userCTRL.controlIP);
+router.put('/update/:token',userCTRL.updateUser);
+//router.get('/getAll',userCTRL.controlIP);
+router.get('/getAll',userCTRL.findAllUser);
+//router.get('/get',userCTRL.controlIP);
+router.get('/get',userCTRL.findUser);
+//router.post('/imagen/photos',userCTRL.controlIP);
+router.post('/imagen/photos',userCTRL.imgPhotos);
+
+module.exports = router;
